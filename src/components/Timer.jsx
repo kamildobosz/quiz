@@ -10,6 +10,9 @@ useEffect(()=>{
     const interval = setInterval(() => {
        setTimer(prev=>prev-1) 
     }, 1000);
+     if(props.countingDown === false){
+         clearInterval(interval)
+     }
     return () =>clearInterval(interval)
 });
 

@@ -14,6 +14,7 @@ function App() {
   const [question, setQuestion] = useState(null)
   const [earnedMoney, setEarnedMoney] = useState(0)
   const [start, setStart] = useState(false)
+  const [countingDown, setCountingDown] = useState(true)
 
   
   
@@ -52,27 +53,37 @@ questionNumber > 1&&
 setEarnedMoney(questionNumbers.find((item) => item.id === questionNumber-1).amount)
 },[questionNumbers, questionNumber])
 
+const handleReplayButton = () =>{
+  setTime(true)
+  setQuestionNumber(1)
+}
+
+
   return start ?  <div className="app">
     
     <div className="left">
-    {time === false ? <div className="endGame">Wygrałeś: {earnedMoney}zł</div> :
+    {time === false ?
     <>
-      <div className="money">
-        <Timer setTime={setTime} questionNumber={questionNumber} start = {start} setStart={setStart}/>
-        <div className="sum">Grasz o: {questionNumbers[questionNumber - 1].amount}zł</div>
+     <div className="endGame">Wygrałeś: {earnedMoney}zł</div> 
+     <button className="replay" onClick = {handleReplayButton}>Zagraj ponownie</button>
+     </>
+     :
+
+    <>
+        <Timer setTime={setTime} questionNumber={questionNumber} start = {start} setStart={setStart} countingDown={countingDown} setCountingDown={setCountingDown}/>
+      <div className="question-container">
+          <Question questionNumber= {questionNumber} question={question} setQuestion={setQuestion}/>
       </div>
      <Answers questionNumber={questionNumber} setQuestionNumber = {setQuestionNumber} setTime ={setTime} question={question} setQuestion={setQuestion}
-     start={start} setStart={setStart}/>
+     start={start} setStart={setStart} time={time} countingDown={countingDown} setCountingDown={setCountingDown}/>
      </>
 
 }
 
     </div>
-    <div className="right">
-      <div className="question-container">
-          <Question questionNumber= {questionNumber} question={question} setQuestion={setQuestion}/>
-      </div>
-      <div className="questions-list">
+    <div className="right" >
+       <div className="sum" style={ time === false ? {display: "none"} : {display:"block"}}>Grasz o: {questionNumbers[questionNumber - 1].amount}zł</div>
+      <div className="questions-list" style={time === false ? {display: "none"} : {dispaly: 'flex'}}>
         {questionNumbers.map(number=>(
           <p className={questionNumber === number.id ? "questions-list-number active" : "questions-list-number"}key={number.id}>{number.number}</p>
         ))}

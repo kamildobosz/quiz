@@ -1,177 +1,490 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .app {
-  
-  height: 100vh;
-  display: flex;
-  color: white;
-  background: linear-gradient(to bottom, rgba(0,0,0,0), #18152c), url("../images/giganci.jpg");
-  font-family: 'Open Sans', sans-serif;
+    height: 100vh;
+    display: flex;
+    color: white;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #18152c), url("../images/giganci.jpg");
+    font-family: 'Open Sans', sans-serif;
 }
 
-
-.left{
-  width: 70%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.left {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.right{
-width: 30%;
-display: flex;
-flex-direction: column;
+.right {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-
-.question-container{
-  height: 50vh;
+.question-container {
+    height: 100px;
+    width: 700px;
+    margin-bottom: 20vh;
 }
 
-.question{
-  height: 100%;
-  width: 100%;
-  margin-top: 30px;
-  background-image: url("../images/question.png");
-  background-repeat: no-repeat;
-  color: #222;
-  font-size: 20px;
-  padding: 30px;
-  padding-right: 140px;
-  margin-right: 200px;
-  font-weight: bolder;
+.question {
+    height: 100%;
+    width: 100%;
+    margin-top: 30px;
+    font-size: 20px;
+    padding: 15px;
+    padding-right: 140px;
+    margin-right: 200px;
+    font-weight: bolder;
+    background: linear-gradient(#1c0a3d, #494f96);
+    border: 2px solid white;
+    border-radius: 10px;
+    color: white;
 }
 
-
-
-.questions-list{
-  padding: 20px;
-  height: 50vh;
-  display: flex;
-  flex-wrap: wrap;
+.questions-list {
+    padding: 20px;
+    height: 50vh;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.questions-list-number{
-  height: 60px;
-  width: 60px;
-  padding: 5px;
-  font-size: 30px;
-  font-weight: bold;
-  border: 3px solid white;
-  border-radius: 50%;
-  margin: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(#1c0a3d, #494f96);
+.questions-list-number {
+    height: 60px;
+    width: 60px;
+    padding: 5px;
+    font-size: 30px;
+    font-weight: bold;
+    border: 3px solid white;
+    border-radius: 50%;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(#1c0a3d, #494f96);
 }
 
-.questions-list-number.active{
-    border-color:tomato;
+.questions-list-number.active {
+    border-color: tomato;
     color: tomato;
     background: linear-gradient(#311564, #595fa5);
-  }
-
-
-.money{
-  height: 50vh;
-  position: relative;
 }
 
-.timer{
-  font-size: 40px;
-  width: 70px;
-  height: 70px;
-  border: 5px solid white;
-  border-radius: 50%;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 30px;
-  background-color: rgba(0,0,0, .5);
-
+.timer {
+    font-size: 40px;
+    width: 70px;
+    height: 70px;
+    border: 5px solid white;
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 100px;
+    background-color: rgba(0, 0, 0, .5);
 }
 
-.sum{
-  text-align: center;
-  width: 400px;
-  padding: 10px;
-  font-size: 40px;
-  font-weight: bolder;
-  border: 5px solid white;
-  position: absolute;
-  top: 150px;
-  left: calc(50% - 200px);
-  background: linear-gradient(#2e5d92, #481c5c )
+.sum {
+    text-align: center;
+    width: 350px;
+    padding: 10px;
+    font-size: 40px;
+    font-weight: bolder;
+    border: 5px solid white;
+    background: linear-gradient(#2e5d92, #481c5c)
 }
 
-.answers{
-  height: 25vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 80%;
+.answers {
+    height: 25vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 80%;
 }
 
-.answer{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 35%;
-  height: 8vh;
-  border: 3px solid white;
-  border-radius: 20px;
-  font-size: 20px;
-  margin-right: 20px;
-  cursor: pointer;
-  background: linear-gradient(#642d7e, #5a8fcc);
-}
- 
-.answer:hover, .answer.active{
-  background: rgb(16, 10, 94);
+.answer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35%;
+    height: 8vh;
+    border: 3px solid white;
+    border-radius: 20px;
+    font-size: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+    background: linear-gradient(#642d7e, #5a8fcc);
 }
 
-.answer.correct{
-  background: rgb(17, 180, 85);
+.answer:hover,
+.answer.active {
+    background: rgb(16, 10, 94);
 }
 
-.answer.wrong{
-  background: rgb(184, 44, 72);
+.answer.correct {
+    background: rgb(17, 180, 85);
 }
 
-.endGame{
-  position: relative;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  text-align: center;
-  width: 400px;
-  padding: 10px;
-  font-size: 40px;
-  font-weight: bolder;
-  border: 5px solid white;
-  background: linear-gradient(#2e5d92, #481c5c )
+.answer.wrong {
+    background: rgb(184, 44, 72);
 }
 
-.start{
-  text-align: center;
-  width: 400px;
-  padding: 10px;
-  font-size: 40px;
-  font-weight: bolder;
-  border: 5px solid white;
-  position: absolute;
-  top: 150px;
-  left: calc(50% - 200px);
-  background: linear-gradient(#2e5d92, #481c5c );
-  color: white;
-  cursor: pointer;
+.endGame {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    width: 400px;
+    padding: 10px;
+    font-size: 40px;
+    font-weight: bolder;
+    border: 5px solid white;
+    background: linear-gradient(#2e5d92, #481c5c)
+}
+
+.start {
+    text-align: center;
+    width: 400px;
+    padding: 10px;
+    font-size: 40px;
+    font-weight: bolder;
+    border: 5px solid white;
+    position: absolute;
+    top: 150px;
+    left: calc(50% - 200px);
+    background: linear-gradient(#2e5d92, #481c5c);
+    color: white;
+    cursor: pointer;
+}
+
+.replay {
+    position: absolute;
+    top: 500px;
+    left: calc(50%-200px);
+    margin: auto;
+    text-align: center;
+    width: 400px;
+    padding: 10px;
+    font-size: 40px;
+    font-weight: bolder;
+    border: 5px solid white;
+    background: linear-gradient(#2e5d92, #481c5c);
+    cursor: pointer;
+    color: white;
+    transition: .3s;
+}
+
+.replay:hover {
+    background: linear-gradient(#18395e, #380f4b);
+}
+
+@media screen and (max-width: 768px) {
+    .app {
+        flex-direction: column;
+        overflow: hidden;
+    }
+    .start {
+        position: static;
+        max-width: 80vw;
+        margin: auto;
+        font-size: 30px;
+        border: 3px solid white;
+        padding: 10px 20px;
+    }
+    .left {
+        width: 100%;
+    }
+    .question-container {
+        width: 90vw;
+        margin-bottom: 10vh;
+    }
+    .question {
+        padding: 15px;
+        font-size: 25px;
+    }
+    .timer {
+        margin-bottom: 50px;
+    }
+    .sum {
+        width: 50vw;
+        font-size: 20px;
+        border: 3px solid white;
+        margin-bottom: 30px;
+    }
+    .answers {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .answer {
+        width: 45vw;
+        margin-right: 10px;
+        padding: 5px;
+        font-size: 25px;
+    }
+    .right {
+        width: 100%;
+        height: 30vh;
+    }
+    .questions-list {
+        flex-wrap: nowrap;
+        height: 10vh;
+    }
+    .questions-list-number {
+        width: 7vw;
+        height: 7vw;
+        margin: 0.5vw;
+        font-size: 15px;
+    }
+    .endGame,
+    .replay {
+        width: 50vw;
+        padding: 10px;
+        font-size: 25px;
+        border: 3px solid white;
+    }
+    .endGame {
+        top: 40vh;
+    }
+    .replay {
+        top: 55vh;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .app {
+        flex-direction: column;
+        overflow: hidden;
+    }
+    .start {
+        position: static;
+        max-width: 80vw;
+        margin: auto;
+        font-size: 25px;
+        border: 3px solid white;
+    }
+    .left {
+        width: 100%;
+    }
+    .question-container {
+        width: 90vw;
+        margin-bottom: 10vh;
+    }
+    .question {
+        padding: 5px;
+    }
+    .timer {
+        margin-bottom: 50px;
+    }
+    .sum {
+        width: 80vw;
+        font-size: 15px;
+        border: 3px solid white;
+    }
+    .answers {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .answer {
+        width: 45vw;
+        margin-right: 10px;
+        padding: 5px;
+        font-size: 16px;
+    }
+    .right {
+        width: 100%;
+        height: 30vh;
+    }
+    .questions-list {
+        flex-wrap: nowrap;
+        height: 10vh;
+    }
+    .questions-list-number {
+        width: 7vw;
+        height: 7vw;
+        margin: 0.5vw;
+        font-size: 15px;
+    }
+    .endGame,
+    .replay {
+        width: 90vw;
+        padding: 5px;
+        font-size: 25px;
+        border: 3px solid white;
+    }
+    .endGame {
+        top: 40vh;
+    }
+    .replay {
+        top: 55vh;
+    }
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+    .app {
+        flex-direction: row;
+    }
+    .start {
+        position: static;
+        max-width: 50vw;
+        margin: auto;
+        font-size: 30px;
+        border: 3px solid white;
+    }
+    .left {
+        margin-top: 100px;
+        width: 65%;
+    }
+    .question-container {
+        width: 94%;
+        margin-bottom: 10vh;
+    }
+    .question {
+        padding: 10px;
+        font-size: 25px;
+    }
+    .timer {
+        height: 60px;
+        width: 60px;
+        margin-bottom: 20px;
+        font-size: 35px;
+    }
+    .sum {
+        width: 25vw;
+        font-size: 20px;
+        border: 3px solid white;
+        margin-top: -100px;
+    }
+    .answers {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .answer {
+        width: 30vw;
+        margin-right: 10px;
+        padding: 5px;
+        font-size: 25px;
+    }
+    .right {
+        width: 35%;
+    }
+    .questions-list {
+        position: absolute;
+        top: 50%;
+        height: 30vh;
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .questions-list-number {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        margin: 5px;
+    }
+    .endGame,
+    .replay {
+        width: 50vw;
+        padding: 10px;
+        font-size: 30px;
+        border: 3px solid white;
+    }
+    .endGame {
+        top: 10vh;
+    }
+    .replay {
+        top: 30vh;
+    }
+}
+
+@media screen and (max-width: 830px) and (orientation: landscape) {
+    .app {
+        flex-direction: row;
+    }
+    .start {
+        position: static;
+        max-width: 50vw;
+        margin: auto;
+        font-size: 25px;
+        border: 3px solid white;
+    }
+    .left {
+        margin-top: 0;
+        width: 65%;
+    }
+    .question-container {
+        width: 96%;
+        margin-bottom: 10vh;
+    }
+    .question {
+        padding: 5px;
+    }
+    .timer {
+        height: 50px;
+        width: 50px;
+        margin-bottom: 20px;
+        font-size: 30px;
+    }
+    .sum {
+        width: 25vw;
+        font-size: 15px;
+        border: 3px solid white;
+        margin-bottom: 30px;
+        margin-top: 0;
+    }
+    .answers {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .answer {
+        width: 30vw;
+        margin-right: 10px;
+        padding: 5px;
+        font-size: 18px;
+    }
+    .right {
+        width: 35%;
+        height: 100vh;
+    }
+    .questions-list {
+        position: absolute;
+        top: 60%;
+        height: 30vh;
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .questions-list-number {
+        width: 30px;
+        height: 30px;
+        font-size: 15px;
+        margin: 5px;
+    }
+    .endGame,
+    .replay {
+        width: 50vw;
+        padding: 5px;
+        font-size: 25px;
+        border: 3px solid white;
+    }
+    .endGame {
+        top: 30vh;
+    }
+    .replay {
+        top: 45vh;
+    }
 }
