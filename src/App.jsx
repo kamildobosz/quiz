@@ -15,6 +15,7 @@ function App() {
   const [earnedMoney, setEarnedMoney] = useState(0)
   const [start, setStart] = useState(false)
   const [countingDown, setCountingDown] = useState(true)
+  const [fullWidth, setFullWidth] = useState(false)
 
   
   
@@ -61,7 +62,7 @@ const handleReplayButton = () =>{
 
   return start ?  <div className="app">
     
-    <div className="left" style={ time === false ? {width: '100vw'} : {width: '70%'} }>
+    <div className="left" style={ time === false ? {width: "100%"} : {color: 'white'}}>
     {time === false ?
     <>
      <div className="endGame">Wygrałeś: {earnedMoney}zł</div> 
@@ -70,12 +71,12 @@ const handleReplayButton = () =>{
      :
 
     <>
-        <Timer setTime={setTime} questionNumber={questionNumber} start = {start} setStart={setStart} countingDown={countingDown} setCountingDown={setCountingDown}/>
+        <Timer setTime={setTime} questionNumber={questionNumber} start = {start} setStart={setStart} countingDown={countingDown} setCountingDown={setCountingDown} setFullWidth={setFullWidth}/>
       <div className="question-container">
           <Question questionNumber= {questionNumber} question={question} setQuestion={setQuestion}/>
       </div>
      <Answers questionNumber={questionNumber} setQuestionNumber = {setQuestionNumber} setTime ={setTime} question={question} setQuestion={setQuestion}
-     start={start} setStart={setStart} time={time} countingDown={countingDown} setCountingDown={setCountingDown}/>
+     start={start} setStart={setStart} time={time} countingDown={countingDown} setCountingDown={setCountingDown} setFullWidth={setFullWidth}/>
      </>
 
 }
