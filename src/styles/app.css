@@ -460,7 +460,7 @@
     }
     .questions-list {
         position: absolute;
-        top: 60%;
+        top: 70%;
         height: 30vh;
         padding: 10px;
         display: flex;
