@@ -61,7 +61,7 @@ const handleReplayButton = () =>{
 
   return start ?  <div className="app">
     
-    <div className="left">
+    <div className="left" style={ time === false ? {width: '100vw'} : {width: '70%'} }>
     {time === false ?
     <>
      <div className="endGame">Wygrałeś: {earnedMoney}zł</div> 
@@ -81,9 +81,9 @@ const handleReplayButton = () =>{
 }
 
     </div>
-    <div className="right" >
-       <div className="sum" style={ time === false ? {display: "none"} : {display:"block"}}>Grasz o: {questionNumbers[questionNumber - 1].amount}zł</div>
-      <div className="questions-list" style={time === false ? {display: "none"} : {dispaly: 'flex'}}>
+    <div className="right"style={ time === false ? {display: "none"} : {display:"flex"}}>
+       <div className="sum">Grasz o: {questionNumbers[questionNumber - 1].amount}zł</div>
+      <div className="questions-list" >
         {questionNumbers.map(number=>(
           <p className={questionNumber === number.id ? "questions-list-number active" : "questions-list-number"}key={number.id}>{number.number}</p>
         ))}
