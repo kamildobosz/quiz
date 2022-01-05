@@ -27,6 +27,7 @@ const Answers = (props) => {
                 
             } else {
                 props.setTime(false)
+                props.setFullWidth(true)
             }
         },
          4000)

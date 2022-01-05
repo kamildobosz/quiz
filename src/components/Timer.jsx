@@ -6,6 +6,7 @@ const Timer = (props) => {
 useEffect(()=>{
     if(timer ===0){
         props.setTime(false)
+        props.setFullWidth(true)
     }
     const interval = setInterval(() => {
        setTimer(prev=>prev-1) 
